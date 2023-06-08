@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33403.182
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreLoginWithLoadingSample", "NetCoreLoginWithLoadingSample\NetCoreLoginWithLoadingSample.csproj", "{73DD0E06-5F83-4A3B-A2F4-C2563A0BEBDC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73DD0E06-5F83-4A3B-A2F4-C2563A0BEBDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73DD0E06-5F83-4A3B-A2F4-C2563A0BEBDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73DD0E06-5F83-4A3B-A2F4-C2563A0BEBDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73DD0E06-5F83-4A3B-A2F4-C2563A0BEBDC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2F41A1A0-432B-49DE-93A4-38EB644EC7DC}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,58 @@
+﻿
+<form method="post" asp-action="Index" asp-controller="Login" id="loginForm">
+	<input type="text" name="username" placeholder="Kullanıcı Adı" required />
+	<input type="password" name="password" placeholder="Şifre" required />
+    <button type="submit" id="loginButton">Giriş Yap</button>
+</form>
+
+<div id="loadingSpinner" style="display: none;">
+    <div class="spinner-border text-success" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+
+<div id="loggedIn"> </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#loginForm').on('submit', function (event) {
+            event.preventDefault(); // Form submit olayını engelle
+
+            var loginButton = $('#loginButton');
+            var loadingSpinner = $('#loadingSpinner');
+            var loggedIn = $('#loggedIn');
+
+            loginButton.prop('disabled', true); 
+            loadingSpinner.show(); 
+
+            $.ajax({
+                url: $(this).attr('action'),
+                method: $(this).attr('method'),
+                data: $(this).serialize(),
+                success: function (response) {
+                    var result = response.result.success;
+                    
+                    if(result){
+                        console.log("Success result");
+                        var token = response.result.data;
+                        loggedIn.html(token);
+                        loggedIn.css({ 'color': 'green'});
+                        return;
+                    }
+
+                    loggedIn.css({ 'color': 'red'});
+                    loggedIn.html(response.result.message);
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    loggedIn.css({ 'color': 'red'});
+                    loggedIn.html(jqXHR.responseText);
+                },
+                complete: function () {
+                    loginButton.prop('disabled', false);
+                    loadingSpinner.hide();
+                }
+            });
+        });
+    });
+</script>
